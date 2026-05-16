@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env
+    networks:
+      - nest-network
+
+networks:
+  nest-network:
+    driver: bridge
